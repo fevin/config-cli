@@ -1,0 +1,32 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+    name = javin
+    email = javin.w.fan@gmail.com
+
+[alias]
+    st = status
+    co = checkout
+    ci = commit
+    lg = log
+    br = branch
+    d  = difftool -y
+    m  = mergetool -y
+[core]
+    editor = vim
+
+[diff]
+    tool = vimdiff
+    prompt = false
+
+[merge]
+    tool = vimdiff
+    prompt = false
+[difftool]
+    prompt = false
+#[http]
+    #proxy = http://127.0.0.1:54967
+#[https]
+    #proxy = https://127.0.0.1:54966
+[url "git@code.aliyun.com:"]
+    insteadOf = https://code.aliyun.com/
