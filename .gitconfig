@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-    name = javin
-    email = javin.w.fan@gmail.com
+    name = 文敬
+    email = javinfan.fjw@alibaba-inc.com
 
 [alias]
     st = status
@@ -30,3 +30,5 @@
     #proxy = https://127.0.0.1:54966
 [url "git@code.aliyun.com:"]
     insteadOf = https://code.aliyun.com/
+[url "git@gitlab.alibaba-inc.com:"]
+	insteadOf = https://gitlab.alibaba-inc.com/
