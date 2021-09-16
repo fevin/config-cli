@@ -1,0 +1,18 @@
+# 别让 ripgrep 呕吐到我的终端，
+--max-columns=150
+# 还展示一个预览。
+--max-column-preview
+
+# 添加我的“网络”类型。
+--type-add
+web:*.{html,css,js}*
+
+# 使用全局模式包括/排除文件或文件夹
+--glob=!.git/*
+
+# 设置颜色。
+--colors=line:none
+--colors=line:style:bold
+
+# 智能区别大小写
+--smart-case

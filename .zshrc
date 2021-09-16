@@ -70,7 +70,6 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  autojump
   zsh-syntax-highlighting
   zsh-autosuggestions
   # java # link: https://github.com/jtaisa/java-zsh-plugin
@@ -109,23 +108,28 @@ alias ssh-dev="ssh javinfan.fjw@100.81.248.59"
 
 alias sed=gsed
 
-export MAVEN_HOME=/Users/fanjingwen/software/apache-maven-3.6.3
-# export JAVA_HOME=`/usr/libexec/java_home -v 14`
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.aliyun.com/homebrew/homebrew-bottles
+export PATH=/opt/homebrew/bin/:$PATH
+
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=$(brew --prefix)/share/zsh-syntax-highlighting/highlighters
+
+# java
+export MAVEN_HOME=/Users/fanjingwen/software/apache-maven-3.8.1
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export RUBY_HOME=/usr/local/opt/ruby
-export PATH=$HOME/go/bin:$RUBY_HOME/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
-export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+export CLASS_PATH=$JAVA_HOME/lib
+
+export RUBY_HOME=$(brew --prefix)/opt/ruby
+export GO_HOME=$(brew --prefix)/opt/go
+export LLVM_HOME=$(brew --prefix)/opt/llvm
+
+export PATH=$LLVM_HOME/bin:$GO_HOME/bin:$RUBY_HOME/bin:$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH
 
 # autojump @link: https://github.com/wting/autojump
-[[ -s /Users/fanjingwen/.autojump/etc/profile.d/autojump.sh ]] && source /Users/fanjingwen/.autojump/etc/profile.d/autojump.sh
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
-# export NVM_DIR="/Users/fanjingwen/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-#
-export PATH=/usr/local/go/bin:~/local/flutter/bin:~/local/bin:$PATH
-
-# flutter
-# export FLUTTER_STORAGE_BASE_URL=http://flutter-storage.alibaba-inc.com/<namespace>
 export PUB_HOSTED_URL=http://pub.alibaba-inc.com
+
+# cpp compile
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
